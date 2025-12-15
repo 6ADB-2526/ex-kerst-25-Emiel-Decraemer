@@ -13,8 +13,12 @@ def allegebruikers(request):
     return JsonResponse(returnAll, safe=False)
 
 def toon1Gebruiker(request, id):
+    # een get werkt op pk - dus dit is niet nodig > gebruikers.id == id <
     gebruiker = gebruikers.objects.get(gebruikers.id == id)
     return JsonResponse(model_to_dict(gebruiker))
+
+# Onderstaande functies hebben geen return of functionaliteit. 
+# is dit te wijten aan te weinig studie? 
 
 @csrf_exempt
 def maakgebruiker(request):

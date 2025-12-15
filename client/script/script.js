@@ -12,6 +12,7 @@ fetch("https://ex-kerst-2025.onrender.com/user/")
 .then((gebruikers) => {
     // functie geven aan je object
     console.log(gebruikers);
+    // Elke gebruiker wordt opgehaald om MOGELIJKS 1 match te vinden op username en password. 
     gebruikers.forEach(gebruiker => {   // find() wou niet werken dus vervangen met forEach()
         if (gebruiker.login == usernameInpt.value && gebruiker.password == passwordInpt.value) {
             btnSignIn.addEventListener("click", () => {
