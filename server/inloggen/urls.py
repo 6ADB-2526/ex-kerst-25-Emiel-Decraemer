@@ -3,9 +3,9 @@ from . import views
 
 urlpatterns = [
     path("allegebruikers", views.allegebruikers),
-    path("eengebruiker", views.toon1Gebruiker),
+    path("eengebruiker/<int:id>", views.toon1Gebruiker),
     path("maakgebruiker", views.maakgebruiker),
     path("wisgebruiker", views.wisGebruiker),
-    path("editgebruiker", views.pasGebruikerAan),
-    path("controlgebruiker", views.controleerGebruiker)
+    path("editgebruiker/<int:id>", views.pasGebruikerAan),
+    path("controlgebruiker/<int:id>", views.controleerGebruiker)
 ]

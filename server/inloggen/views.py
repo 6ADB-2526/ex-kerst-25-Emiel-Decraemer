@@ -13,11 +13,12 @@ def allegebruikers(request):
     return JsonResponse(returnAll, safe=False)
 
 def toon1Gebruiker(request, id):
-    gebruikers.objects.get(pk == id)
-    return HttpResponse()
+    gebruiker = gebruikers.objects.get(gebruikers.id == id)
+    return JsonResponse(model_to_dict(gebruiker))
 
 @csrf_exempt
 def maakgebruiker(request):
+    
     return HttpResponse("gelukt")
 
 @csrf_exempt
@@ -25,9 +26,9 @@ def wisGebruiker(request):
     return JsonResponse()
 
 @csrf_exempt
-def pasGebruikerAan(request):
+def pasGebruikerAan(request, id):
     return JsonResponse()
 
 @csrf_exempt
-def controleerGebruiker(request):
+def controleerGebruiker(request, id):
     return JsonResponse()
